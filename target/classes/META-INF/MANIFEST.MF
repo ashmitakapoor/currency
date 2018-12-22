@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: ms-currency
+Implementation-Version: 1.0.0
+Built-By: akapoor
+Implementation-Vendor-Id: com.oracle.ssi
+Build-Jdk: 1.8.0_191
+Implementation-URL: http://projects.spring.io/spring-boot/ms-currency/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
