@@ -1,11 +1,12 @@
 podTemplate(
     inheritFrom: "maven", 
+    label: "myJenkins", 
     cloud: "openshift", 
     volumes: [
         persistentVolumeClaim(claimName: "m2", mountPath: "/home/jenkins/.m2/")
     ]) {
 
-    node {
+    node("myJenkins") {
 
         @Library('github.com/redhat-helloworld-msa/jenkins-library@master') _
         
