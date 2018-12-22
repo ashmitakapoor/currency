@@ -5,7 +5,7 @@ podTemplate(
         persistentVolumeClaim(claimName: "m2", mountPath: "/home/jenkins/.m2/")
     ]) {
 
-    node("myJenkins") {
+    node {
 
         @Library('github.com/redhat-helloworld-msa/jenkins-library@master') _
         
