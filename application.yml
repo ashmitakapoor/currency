@@ -6,7 +6,7 @@ spring:
     mongodb:
       username: dbuser
       password: dbpass
-      host: mongodb.ci.svc
+      host: localhost
       port: 27017
       database: currency  
 # Define the port where the UAA server would be running

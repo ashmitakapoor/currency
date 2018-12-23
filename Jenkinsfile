@@ -22,7 +22,7 @@ podTemplate(
     
         stage ('DEV - Image build'){
             echo 'Building docker image and deploying to Dev'
-            sh 'oc create configmap currency-config --from-file=application.yml'
+    		sh "oc create configmap currency-config --from-file=application.yml || echo 'Application already Exists'"
             buildApp('myproject', "currency")
             echo "This is the build number: ${env.BUILD_NUMBER}"
         }

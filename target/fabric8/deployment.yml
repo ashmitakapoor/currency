@@ -1,0 +1,21 @@
+---
+apiVersion: "extensions/v1beta1"
+kind: "Deployment" 
+spec: 
+  replicas: 1
+  template: 
+    spec: 
+      containers: 
+      - env:
+         - name: JAVA_OPTIONS
+           value: "-Xmx256m"
+        volumeMounts:
+          - name: application-config 
+            mountPath: "/deployments/config" 
+            readOnly: true
+      volumes:
+      - name: application-config
+        configMap:
+          name: currency-config 
+          items:
+          - key: application.yml

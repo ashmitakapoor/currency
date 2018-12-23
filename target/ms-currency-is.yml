@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: List
+items:
+- apiVersion: v1
+  kind: ImageStream
+  metadata:
+    name: ms-currency
+  spec:
+    tags:
+    - from:
+        kind: ImageStreamImage
+        name: ms-currency@sha256:5035fb3a0ae66f097d368bca7bf76d48765876990dbf10ff8d3fc9ee7f6c0486
+        namespace: myproject
+      name: 1.0.0
