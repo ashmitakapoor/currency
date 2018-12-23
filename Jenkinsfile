@@ -23,7 +23,10 @@ podTemplate(
         stage ('DEV - Image build'){
             echo 'Building docker image and deploying to Dev'
     		sh "oc create configmap currency-config --from-file=application.yml || echo 'Application already Exists'"
-            buildApp('myproject', "currency")
+            sh "oc new-build --binary --name=currency -l app=currency || echo 'Build exists"
+			sh "oc start-build currency --from-dir=. --follow"
+			sh "oc new-app currency -l app=currency,hystrix.enabled=true || echo 'Application already Exists"
+			sh "oc expose service currency"
             echo "This is the build number: ${env.BUILD_NUMBER}"
         }
     
