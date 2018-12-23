@@ -15,12 +15,6 @@ import com.uber.jaeger.samplers.ProbabilisticSampler;
 import com.uber.jaeger.senders.Sender;
 import com.uber.jaeger.senders.UdpSender;
 
-import feign.Logger;
-import feign.httpclient.ApacheHttpClient;
-import feign.hystrix.HystrixFeign;
-import feign.jackson.JacksonDecoder;
-import feign.opentracing.TracingClient;
-import feign.opentracing.hystrix.TracingConcurrencyStrategy;
 import io.opentracing.NoopTracerFactory;
 import io.opentracing.Tracer;
 import io.opentracing.contrib.spring.web.autoconfig.WebTracingConfiguration;
